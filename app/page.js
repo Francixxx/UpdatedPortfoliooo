@@ -181,7 +181,7 @@ export default function Portfolio() {
 
               <div className="flex flex-wrap gap-4">
                 <a href="#contact" className={`group px-6 py-3 bg-gradient-to-r ${accentColor} text-white rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all flex items-center gap-2`}>
-                  Let's Talk
+                  Let&apos;s Talk
                   <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
                 <a href="/Espiritu-Francis_resume.pdf" download className={`group px-6 py-3 ${bgSecondary} border ${borderColor} rounded-xl font-medium hover:scale-105 transition-all ${textPrimary} flex items-center gap-2`}>
@@ -272,13 +272,15 @@ export default function Portfolio() {
             {projects.map((project, index) => (
               <div key={index} className={`group ${bgSecondary} border ${borderColor} rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 cursor-pointer ${index === 0 ? 'md:col-span-2' : ''}`}>
                 <div className={`relative h-48 overflow-hidden ${darkMode ? 'bg-slate-950' : 'bg-gray-100'}`}>
-                  <Image
-                    src={project.image} 
-                    alt={`Screenshot of ${project.title}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover object-center group-hover:object-contain transition-all duration-300"
-                  />
+                  {project.image && (
+                    <Image
+                      src={project.image}
+                      alt={`Screenshot of ${project.title}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover object-center group-hover:object-contain transition-all duration-300"
+                    />
+                  )}
                   <div className="absolute top-4 right-4 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-semibold">
                     {project.year}
                   </div>
