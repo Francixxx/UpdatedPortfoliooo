@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Github, Linkedin, Mail, ExternalLink, Sun, Moon, MapPin, Briefcase, Code2, Award, BookOpen, Users, MessageCircle, ChevronRight, Youtube, Facebook, Instagram, Terminal, Rocket, Zap, Coffee, Heart, ArrowUpRight, Download } from 'lucide-react';
 export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(false);
@@ -108,10 +109,12 @@ export default function Portfolio() {
         <div className="flex flex-col items-center gap-4">
           <div className="relative w-24 h-24">
             <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${accentColor} animate-spin`}></div>
-            <img
+            <Image
               src="/Profile.png"
               alt="Francis's profile picture"
-              className="w-20 h-20 rounded-full object-cover absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              width={80}
+              height={80}
+              className="rounded-full object-cover absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             />
           </div>
           <div className={`text-2xl font-bold ${textPrimary} mt-4`}>Francis Espiritu</div>
@@ -125,10 +128,12 @@ export default function Portfolio() {
           <nav className={`${bgSecondary} ${scrolled ? 'shadow-lg shadow-black/5' : ''} rounded-full px-6 py-3 backdrop-blur-xl bg-opacity-80 border ${borderColor}`}>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src="/Profile.png"
                   alt="Francis's profile picture"
-                  className="w-10 h-10 rounded-full object-cover"
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover"
                 />
                 <span className={`font-bold text-lg ${textPrimary} hidden sm:block`}>Francis</span>
               </div>
@@ -206,15 +211,17 @@ export default function Portfolio() {
               <div className={`group ${bgSecondary} border ${borderColor} rounded-3xl p-8 space-y-6`}>
                 <div className="relative">
                   <div className="w-full aspect-square rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 overflow-hidden">
-                    <img 
+                    <Image
                       src="/Profile.png" 
                       alt="Francis's profile picture" 
-                      className="w-full h-full object-cover transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+                      fill
+                      className="object-cover transition-opacity duration-300 opacity-100 group-hover:opacity-0"
                     />
-                    <img 
+                    <Image
                       src="/profile2.png" 
                       alt="Francis's profile picture (hover)" 
-                      className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                      fill
+                      className="object-cover transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                     />
                   </div>
                   <div className={`absolute -bottom-4 left-1/2 transform -translate-x-1/2 px-6 py-2 ${bgSecondary} border ${borderColor} rounded-full backdrop-blur-xl bg-opacity-90 flex items-center gap-2`}>
@@ -265,10 +272,12 @@ export default function Portfolio() {
             {projects.map((project, index) => (
               <div key={index} className={`group ${bgSecondary} border ${borderColor} rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 cursor-pointer ${index === 0 ? 'md:col-span-2' : ''}`}>
                 <div className={`relative h-48 overflow-hidden ${darkMode ? 'bg-slate-950' : 'bg-gray-100'}`}>
-                  <img 
+                  <Image
                     src={project.image} 
                     alt={`Screenshot of ${project.title}`}
-                    className="w-full h-full object-cover object-center group-hover:object-contain transition-all duration-300"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-center group-hover:object-contain transition-all duration-300"
                   />
                   <div className="absolute top-4 right-4 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-semibold">
                     {project.year}
@@ -300,10 +309,10 @@ export default function Portfolio() {
             <div className="space-y-6">
               <h2 className={`text-4xl font-bold ${textPrimary}`}>About Me</h2>
               <p className={`${textSecondary} leading-relaxed`}>
-               I’m a full-stack web developer passionate about creating innovative web and mobile solutions that help businesses thrive in the digital age.
+               I&apos;m a full-stack web developer passionate about creating innovative web and mobile solutions that help businesses thrive in the digital age.
               </p>
               <p className={`${textSecondary} leading-relaxed`}>
-                Currently working as a Software Developer, I’ve also gained hands-on experience through internships and freelance projects. I enjoy building scalable applications, optimizing user experiences, and writing clean, maintainable code that brings ideas to life.
+                Currently working as a Software Developer, I&apos;ve also gained hands-on experience through internships and freelance projects. I enjoy building scalable applications, optimizing user experiences, and writing clean, maintainable code that brings ideas to life.
               </p>
               <div className={`${bgSecondary} border ${borderColor} rounded-2xl p-6 space-y-4`}>
                 <div className="flex items-center gap-3">
@@ -390,10 +399,10 @@ export default function Portfolio() {
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
             <div className="relative z-10 space-y-6">
               <h2 className={`text-4xl font-bold ${textPrimary}`}>
-                Let's Build Something Amazing
+                Let&apos;s Build Something Amazing
               </h2>
               <p className={`text-xl ${textSecondary} max-w-2xl mx-auto`}>
-                Have a project in mind? Whether it's a startup idea, enterprise solution, or just want to chat about tech - I'm all ears.
+                Have a project in mind? Whether it&apos;s a startup idea, enterprise solution, or just want to chat about tech - I&apos;m all ears.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-4">
                 <a href="Francisdizonespiritu09@gmail.com" className={`group px-8 py-4 bg-gradient-to-r ${accentColor} text-white rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all flex items-center gap-2`}>
@@ -416,10 +425,12 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-3">
-              <img
+              <Image
                 src="/Profile.png"
                 alt="Francis's profile picture"
-                className="w-10 h-10 rounded-full object-cover"
+                width={40}
+                height={40}
+                className="rounded-full object-cover"
               />
               <div>
                 <div className={`font-semibold ${textPrimary}`}>Francis</div>
